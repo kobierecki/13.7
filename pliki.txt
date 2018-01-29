@@ -1,2 +1,2 @@
-cat.jpgcat.jpg,test.js
-cat.jpg,test.js
+cat.jpg
+test.js

@@ -1,5 +1,3 @@
-import { stat } from 'fs';
-
 
 var fs = require('fs');
 var colors = require('colors');
@@ -22,9 +20,12 @@ fs.stat('./img/cat.jpg', function(err, stats){
     console.log(stats);
 })
 
+fs.truncate('./pliki.txt', 0, function(err){console.log('done');})
+fs.truncate('./tekst.txt', 0, function(err){console.log('done');})
+
 fs.readdir('./img', function(err, stats){
-    fs.appendFile('./pliki.txt', '\n' + stats, function(err){
-        if(err)throw err;
-        console.log('Zapisano'.red);
-    })
+        for(var i = 0; i <= stats.length - 1; i++){
+            fs.appendFile('./pliki.txt', stats[i] + '\n', function(err){
+            })
+        }     
 })
